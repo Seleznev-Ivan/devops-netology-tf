@@ -3,7 +3,7 @@ resource "local_file" "VM_hosts_conf" {
     {
       webservers = yandex_compute_instance.web
       databases  = yandex_compute_instance.eachvm
-      storage    = yandex_compute_instance.storage
+      storage    = [yandex_compute_instance.storage]
     }
   )
   filename = "${abspath(path.module)}/hosts.cfg"
